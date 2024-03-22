@@ -8,6 +8,9 @@ authors = [
 dependencies = [
     "nltk>=3.8.1",
     "pyenchant>=3.2.2",
+    "keras>=3.1.1",
+    "scikit-learn>=1.4.0",
+    "plot-keras-history>=1.1.38",
 ]
 requires-python = ">=3.10"
 readme = "README.md"

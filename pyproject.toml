@@ -47,11 +47,10 @@ dev = [
 
 [tool.pdm.scripts]
 lint = {composite = ["flake8", "mypy"]}
-test = "pytest -vv -p no:cacheprovider --cov=egsis --cov-report xml:tests/coverage.xml --cov-report term -k"
-tests = {composite = ["test tests/", "coverage json"]}
+test = "pytest -vv -p no:cacheprovider --cov=nlp_tir --cov-report xml:tests/coverage.xml --cov-report term -k"
+tests = {composite = ["test test", "coverage json"]}
 format = "black egsis/ tests/"
-check = {composite = ["lint egsis/", "test tests/"]}
-egsis = {call = "egsis.main:cli"}
+check = {composite = ["lint nlp_tir/", "test tests/"]}
 notebook = "jupyter lab"
 
 [tool.pytest.ini_options]

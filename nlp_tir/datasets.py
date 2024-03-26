@@ -1,16 +1,18 @@
 import os
 import zipfile
+from io import StringIO
 from urllib.parse import urlparse, unquote
 from urllib import request
 
 import pandas
-
+import requests
 
 _base_path = os.path.dirname(os.path.dirname(__file__))
 datasets_dir = os.path.join(_base_path, "datasets")
 
 datasets_urls = {
-    "reuters_50_50": "https://archive.ics.uci.edu/static/public/217/reuter+50+50.zip"  # noqa
+    "reuter_50_50": "https://archive.ics.uci.edu/static/public/217/reuter+50+50.zip",  # noqa
+    "br_worst_places_to_work": "https://docs.google.com/spreadsheets/d/1u1_8ND_BY1DaGaQdu0ZRZPebrOaTJekE9hyw_7BAlzw/export?format=csv"   # noqa
 }
 
 
@@ -40,7 +42,7 @@ def download_dataset(url: str) -> str:
     return fpath
 
 
-def get_dataset_reuters_50_50() -> dict:
+def get_dataset_reuter_50_50() -> dict:
     """Author recognition datasets with 50 authors and 50 texts for each one.
 
     Returns
@@ -48,7 +50,7 @@ def get_dataset_reuters_50_50() -> dict:
     A dictionary with two pandas dataframes, for train and other for
     test.
     """
-    fpath = download_dataset(datasets_urls["reuters_50_50"])
+    fpath = download_dataset(datasets_urls["reuter_50_50"])
     columns = ["env", "author", "text", "text_id"]
     values = []
     with zipfile.ZipFile(fpath) as z:
@@ -68,3 +70,9 @@ def get_dataset_reuters_50_50() -> dict:
         "test": df[df.env == "test"],
         "train": df[df.env == "train"]
     }
+
+
+def get_dataset_br_worst_places_to_work() -> pandas.DataFrame:
+    response = requests.get(datasets_urls["br_worst_places_to_work"])
+    response.encoding = 'utf-8'  # fix encoding
+    return pandas.read_csv(StringIO(response.text))

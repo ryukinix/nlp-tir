@@ -8,8 +8,8 @@ def mock_datasets_folder(monkeypatch):
     monkeypatch.setattr(datasets, "datasets_dir", "/tmp")
 
 
-def test_get_dataset_reuters_50_50(mock_datasets_folder):
-    r50_50 = datasets.get_dataset_reuters_50_50()
+def test_get_dataset_reuter_50_50(mock_datasets_folder):
+    r50_50 = datasets.get_dataset_reuter_50_50()
     df_train, df_test = r50_50["train"], r50_50["test"]
 
     assert len(df_train) == 2500

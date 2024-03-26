@@ -46,7 +46,7 @@ dev = [
 ]
 
 [tool.pdm.scripts]
-lint = {composite = ["flake8", "mypy"]}
+lint = {composite = ["flake8", "mypy --install-types"]}
 test = "pytest -vv -p no:cacheprovider --cov=nlp_tir --cov-report xml:tests/coverage.xml --cov-report term -k"
 tests = {composite = ["test test", "coverage json"]}
 format = "black egsis/ tests/"

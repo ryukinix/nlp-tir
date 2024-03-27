@@ -43,6 +43,7 @@ dev = [
     "pytest-mock>=3.8.2",
     "pytest>=7.3.1",
     "pydot>=2.0.0",
+    "wordcloud>=1.9.3",
 ]
 
 [tool.pdm.scripts]

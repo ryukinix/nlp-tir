@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:9ecfe7cad97f1de6239f79f914613e0d939cceb784472a0b43c4cec8bbc92d25"
+content_hash = "sha256:0409dd36253b215769e23142167acbafde152b17430bfdc051ee5e7a15e108a9"
 
 [[package]]
 name = "absl-py"
@@ -2344,6 +2344,23 @@ files = [
 ]
 
 [[package]]
+name = "scikeras"
+version = "0.12.0"
+requires_python = ">=3.8.0,<3.12.0"
+summary = "Scikit-Learn API wrapper for Keras."
+groups = ["default"]
+dependencies = [
+    "packaging>=0.21",
+    "scikit-learn>=1.0.0",
+    "tensorflow-io-gcs-filesystem<0.32,>=0.23.1; sys_platform == \"win32\"",
+    "tensorflow-metal<2.0.0,>=1.1.0; sys_platform == \"darwin\" and platform_machine == \"arm64\"",
+]
+files = [
+    {file = "scikeras-0.12.0-py3-none-any.whl", hash = "sha256:2d69a4a70118f8a0ffb1b2487b25f7c668f36ab83425fdf9a3271eb02da739ab"},
+    {file = "scikeras-0.12.0.tar.gz", hash = "sha256:f60d81255a8904671bd33cbff060926cfa5ddd52fa234b12290afe3cb69dcc6c"},
+]
+
+[[package]]
 name = "scikit-learn"
 version = "1.4.1.post1"
 requires_python = ">=3.9"
@@ -2638,19 +2655,34 @@ files = [
 
 [[package]]
 name = "tensorflow-io-gcs-filesystem"
-version = "0.36.0"
+version = "0.31.0"
 requires_python = ">=3.7, <3.12"
 summary = "TensorFlow IO"
 groups = ["default"]
 files = [
-    {file = "tensorflow_io_gcs_filesystem-0.36.0-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:702c6df62b38095ff613c433546d9424d4f33902a5ab26b00fd26457e27a99fa"},
-    {file = "tensorflow_io_gcs_filesystem-0.36.0-cp310-cp310-macosx_12_0_arm64.whl", hash = "sha256:e9b8aaca2789af356c42afda0f52380f82e5abb2f3c0b85087833fcfe03875d8"},
-    {file = "tensorflow_io_gcs_filesystem-0.36.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c477aed96864ceae77d7051c3b687f28813aba7320fc5dd552164fad6ec8d1a1"},
-    {file = "tensorflow_io_gcs_filesystem-0.36.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:be1ff92559dfa23048b01179a1827081947583f5c6f9986ccac471df8a29322a"},
-    {file = "tensorflow_io_gcs_filesystem-0.36.0-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:72c3ca4b8c0d8dbdd970699d05a100107cf200317ad8e6a8373e2c37225cd552"},
-    {file = "tensorflow_io_gcs_filesystem-0.36.0-cp311-cp311-macosx_12_0_arm64.whl", hash = "sha256:848e8e89a0f49258c7782189c938d8d1162d989da1a80c79f95c7af3ef6006c8"},
-    {file = "tensorflow_io_gcs_filesystem-0.36.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4d72db1ab03edb65fa1e98d06e504ccbc64282d38ab3589afb6db66dc448d1c1"},
-    {file = "tensorflow_io_gcs_filesystem-0.36.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1bd4d946b5fa23220daa473a80e511a5fb27493d7e49d17dff0bb43bb0a31f32"},
+    {file = "tensorflow_io_gcs_filesystem-0.31.0-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:a71421f8d75a093b6aac65b4c8c8d2f768c3ca6215307cf8c16192e62d992bcf"},
+    {file = "tensorflow_io_gcs_filesystem-0.31.0-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:359134ecbd3bf938bb0cf65be4526106c30da461b2e2ce05446a229ed35f6832"},
+    {file = "tensorflow_io_gcs_filesystem-0.31.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b658b33567552f155af2ed848130f787bfda29381fa78cd905d5ee8254364f3c"},
+    {file = "tensorflow_io_gcs_filesystem-0.31.0-cp310-cp310-win_amd64.whl", hash = "sha256:961353b38c76471fa296bb7d883322c66b91415e7d47087236a6706db3ab2758"},
+    {file = "tensorflow_io_gcs_filesystem-0.31.0-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:8909c4344b0e96aa356230ab460ffafe5900c33c1aaced65fafae71d177a1966"},
+    {file = "tensorflow_io_gcs_filesystem-0.31.0-cp311-cp311-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:e417faf8755aafe52d8f8c6b5ae5bae6e4fae8326ee3acd5e9181b83bbfbae87"},
+    {file = "tensorflow_io_gcs_filesystem-0.31.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:37c40e3c4ee1f8dda3b545deea6b8839192c82037d8021db9f589908034ad975"},
+    {file = "tensorflow_io_gcs_filesystem-0.31.0-cp311-cp311-win_amd64.whl", hash = "sha256:4bb37d23f21c434687b11059cb7ffd094d52a7813368915ba1b7057e3c16e414"},
+]
+
+[[package]]
+name = "tensorflow-metal"
+version = "1.1.0"
+summary = "TensorFlow acceleration for Mac GPUs."
+groups = ["default"]
+marker = "sys_platform == \"darwin\" and platform_machine == \"arm64\""
+dependencies = [
+    "six>=1.15.0",
+    "wheel~=0.35",
+]
+files = [
+    {file = "tensorflow_metal-1.1.0-cp310-cp310-macosx_12_0_arm64.whl", hash = "sha256:443d71b3a567fe3f45f982c4794d357b55dec01a4ff1d6d8ba152a68a2c018ab"},
+    {file = "tensorflow_metal-1.1.0-cp311-cp311-macosx_12_0_arm64.whl", hash = "sha256:1c365669fc9d764edcc1773254a477db7096975b1bff58fb37a11d7b8ca4295f"},
 ]
 
 [[package]]

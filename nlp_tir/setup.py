@@ -20,3 +20,4 @@ def nltk_download_packages():
     nltk.download('tagsets')
     nltk.download('treebank')
     nltk.download('wordnet')
+    nltk.download('omw-1.4')

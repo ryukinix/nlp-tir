@@ -1,6 +1,6 @@
 [project]
 name = "nlp-tir"
-version = "0.1.0a0"
+version = "0.1.0a1"
 description = "Tir is the god of written language, schooling, rhetoric, wisdom, and the arts in Armenian mythology."
 authors = [
     {name = "Manoel Vilela", email = "manoel_vilela@engineer.com"},
